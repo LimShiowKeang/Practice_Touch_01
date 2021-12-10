@@ -1,0 +1,11 @@
+---
+my_path: ./test2
+
+file_name:
+      - 'test1'
+      - 'test2'
+      - 'test3'
+      - 'test4'
+      - 'abc1'
+      - 'abc2'
+      - 'abc3'

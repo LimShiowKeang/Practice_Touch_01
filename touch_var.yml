@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes #turn you into a super user
+  connection: local
+
+  tasks:
+ 
+  - name: Touch a file
+    shell: "touch {{ my_path }}/{{ file_name }}"
+  - name: echo in "Do not Open!"
+    shell: echo "Do Not not Open!" >> {{ my_path }}/{{ file_name }}
+
+# need to use example command:
+# ansible-playbook lab4_touch_var.yml --extra-vars "my_path=./test file_name=test123.txt"

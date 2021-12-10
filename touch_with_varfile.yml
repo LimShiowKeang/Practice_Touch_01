@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  become: yes #turn you into a super user
+  connection: local
+  
+  vars_files:
+  - vars.yml 
+  
+  tasks:
+  - name: Touch a list of files
+    file:
+      path: "{{my_path}}/{{item}}"
+      state: touch
+    loop: "{{file_name}}"
+  
+# need to use example command:
+# ansible-playbook lab4_touch_varfile.yml -e @vars.yml
+# define path and files in vars.yml
